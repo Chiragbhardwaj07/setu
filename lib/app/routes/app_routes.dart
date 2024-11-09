@@ -7,6 +7,7 @@ import 'package:vasu/features/authentication/views/language_selection.dart';
 import 'package:vasu/features/authentication/views/login/login_screen.dart';
 import 'package:vasu/features/authentication/views/onboarding_screen.dart';
 import 'package:vasu/features/authentication/views/otp_screen.dart';
+import 'package:vasu/shared/bottom_navbar/view_bottom_navbar.dart';
 
 class AppPages {
   static const initial = Routes.login;
@@ -27,6 +28,14 @@ class AppPages {
       page: () => OnboardingScreen(),
       binding: OnboardingBinding(),
     ),
+
+    GetPage(
+      name: Routes.bottom_navbar, 
+      page: () => BottomNavbar()
+    ),
+
+    
+    
     GetPage(
       name: Routes.language_selection,
       page: () => LanguageSelectionScreen(),
@@ -39,5 +48,7 @@ class Routes {
   static const login = '/login';
   static const otp = '/otp/:phoneNumber';
   static const onboarding = '/onboarding';
+  static const bottom_navbar = '/bottom_navbar';
   static const language_selection = '/language';
+  
 }
