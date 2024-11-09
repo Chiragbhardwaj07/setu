@@ -41,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 Center(
                   child: Image.asset(
-                    'assets/icons/sanket-logo.png',
+                    'assets/icons/logo.png',
                     width: 200,
                     height: 150,
                   ),

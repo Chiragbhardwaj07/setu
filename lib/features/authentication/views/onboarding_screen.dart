@@ -55,7 +55,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               children: [
                 Center(
                   child: Image.asset(
-                    'assets/icons/vasu-logo.png',
+                    'assets/icons/logo.png',
                     width: 200,
                     height: 150,
                   ),

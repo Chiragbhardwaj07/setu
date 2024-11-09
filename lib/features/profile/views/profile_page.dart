@@ -8,7 +8,7 @@ import 'package:vasu/features/authentication/controllers/login_controller.dart';
 import 'package:vasu/features/authentication/data/models/user_auth_model.dart';
 import 'package:vasu/features/authentication/data/services/user_local_service.dart';
 import 'package:vasu/features/profile/controllers/settings_controller.dart';
-
+import 'package:vasu/shared/appbar/view_appbar.dart';
 import 'package:vasu/shared/constants/app_colors.dart';
 import 'package:vasu/shared/constants/app_proportions.dart';
 import 'package:vasu/utils/secure_storage.dart';
