@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:vasu/features/home_screen/utils/homepage-welcome-panel.dart';
 import 'package:vasu/features/home_screen/utils/homepage_action_button.dart';
+import 'package:vasu/features/text_to_speech/views/speechToSign.dart';
 import 'package:vasu/shared/constants/app_proportions.dart';
 
 class Home_page extends StatefulWidget {
@@ -26,12 +27,18 @@ class _Home_pageState extends State<Home_page> {
             HomepageButton(
               icon: Icons.text_fields,
               title: "Text".tr,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SpeechScreen()));
+              },
             ),
             HomepageButton(
               title: "Voice".tr,
               icon: Icons.mic,
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SpeechScreen()));
+              },
             ),
           ],
         ),

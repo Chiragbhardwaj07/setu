@@ -3,13 +3,13 @@ import 'package:get/get.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:vasu/app/localization/app_translations.dart'; // Your app's translations for GetX
 import 'package:vasu/app/routes/app_routes.dart';
-
 import 'package:vasu/app/themes/app_themes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:vasu/features/authentication/controllers/language_selection_controller.dart';
 import 'package:vasu/features/authentication/controllers/login_controller.dart';
 import 'package:vasu/features/authentication/data/models/user_model_hive.dart';
 import 'package:vasu/features/authentication/data/services/user_session_servive.dart';
+import 'package:vasu/features/profile/controllers/settings_controller.dart';
 import 'package:vasu/utils/secure_storage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 // Import for localization delegates
@@ -76,7 +76,9 @@ class MyApp extends StatelessWidget {
     Get.put(LoginController());
 
     return Obx(() => GetMaterialApp(
-          initialBinding: BindingsBuilder(() {}),
+          initialBinding: BindingsBuilder(() {
+            Get.put(SettingsController());
+          }),
           debugShowCheckedModeBanner: false,
           title: 'vasu',
 
