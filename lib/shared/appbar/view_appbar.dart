@@ -2,16 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:vasu/shared/constants/app_proportions.dart';
 
+
 class appbar extends StatefulWidget implements PreferredSizeWidget {
   final IconData initialFloatingIcon;
   final VoidCallback onFloatingButtonPressed;
   final String Title;
+  final String ImgPath;
+  final VoidCallback HamBurgerAction;
 
   appbar({
     Key? key,
     required this.initialFloatingIcon,
     required this.onFloatingButtonPressed,
     required this.Title,
+    required this.ImgPath,
+    required this.HamBurgerAction,
   }) : super(key: key);
 
   @override
@@ -63,9 +68,9 @@ class _appbarState extends State<appbar> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       IconButton(
-                          onPressed: () {},
+                          onPressed: widget.HamBurgerAction,
                           icon: Image.asset(
-                            "assets/icons/Hamburger.png",
+                            widget.ImgPath,
                             height: 40,
                             width: 40,
                           )),
@@ -90,7 +95,10 @@ class _appbarState extends State<appbar> {
                     10,
                   )),
               onPressed: widget.onFloatingButtonPressed,
-              child: Icon(floatingIcon),
+              child: Icon(
+                floatingIcon,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
               mini: true,
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
             ),

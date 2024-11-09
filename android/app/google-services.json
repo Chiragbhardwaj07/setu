@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "331719729045",
+    "project_id": "setu-d303b",
+    "storage_bucket": "setu-d303b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:331719729045:android:d385da1473d4d56486a09c",
+        "android_client_info": {
+          "package_name": "com.example.vasu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADnKFdIi_PCHuhkmRlEH1rpUGs_fp1Yjw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
