@@ -38,7 +38,7 @@ class GoogleAuthService {
       String idToken) async {
     try {
       final response = await http.post(
-        Uri.parse('https://snaket-backend-4.onrender.com/google-login'),
+        Uri.parse('https://setu-2br3.onrender.com/google-login'),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -64,6 +64,7 @@ class GoogleAuthService {
     } catch (e) {
       print('Error during backend authentication: $e');
     }
+    return null;
     // return null;
   }
 
@@ -73,7 +74,7 @@ class GoogleAuthService {
   }
 
   static const String refreshUrl =
-      'https://snaket-backend-4.onrender.com/refresh';
+      'https://setu-2br3.onrender.com/refresh';
 
   static Future<void> refreshAuthToken() async {
     final refreshToken = await SecureStorage.getRefreshToken();

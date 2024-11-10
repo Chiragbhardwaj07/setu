@@ -17,21 +17,22 @@ class LoginController extends GetxController {
 
   final UserLocalService userLocalService = UserLocalService();
   final AuthRepository authRepository = AuthRepository();
-  String? phoneNumber;
+  String? email;
   TextEditingController otpController = TextEditingController();
 
   // 1. Login
-  Future<void> loginUser(String phoneNumberInput) async {
+  Future<void> loginUser(String emailInput) async {
     isLoading(true);
     try {
-      final response = await authRepository.login(phoneNumberInput);
+      print(emailInput);
+      final response = await authRepository.login(emailInput);
       debugPrint('Response: $response');
-      phoneNumber = phoneNumberInput;
-      Get.toNamed('/otp/$phoneNumber');
+      email = emailInput;
+      Get.toNamed('/otp/$email');
     } catch (e) {
       UIHelpers.showSnackbar(
         title: 'Login Failed',
-        message: 'Unable to login with phone number.',
+        message: 'Unable to login with email.',
         backgroundColor: Colors.red,
       );
     } finally {
@@ -41,10 +42,10 @@ class LoginController extends GetxController {
 
   // 2. OTP Verification
   Future<void> verifyOTP(String otp) async {
-    if (phoneNumber == null) {
+    if (email == null) {
       UIHelpers.showSnackbar(
         title: 'Error',
-        message: 'Phone number not provided!',
+        message: 'email not provided!',
         backgroundColor: Colors.red,
       );
       return;
@@ -52,7 +53,7 @@ class LoginController extends GetxController {
 
     isLoading(true);
     try {
-      final response = await authRepository.verifyOtp(phoneNumber!, otp);
+      final response = await authRepository.verifyOtp(email!, otp);
       final authResponse = AuthResponseModel.fromJson(response);
 
       if (authResponse.token != null && authResponse.refreshToken != null) {
@@ -69,7 +70,7 @@ class LoginController extends GetxController {
       if (authResponse.user.firstTime == true) {
         Get.toNamed('/onboarding', parameters: {
           'isGoogleSignIn': 'false',
-          'phone': phoneNumber!,
+          'email': email!,
         });
       } else {
         Get.offAllNamed('/bottom_navbar');
@@ -91,10 +92,10 @@ class LoginController extends GetxController {
     try {
       isGoogleLoading(true);
       String? idToken = await GoogleAuthService.signInWithGoogle();
-
+print(idToken);
       if (idToken != null) {
         final response = await GoogleAuthService.sendTokenToBackend(idToken);
-        debugPrint('Response: $response');
+        print('Response: $response');
 
         if (response != null) {
           // Use a null check or default to false if first_time is null

@@ -225,14 +225,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   border: OutlineInputBorder(),
                                   labelStyle: GoogleFonts.mulish(),
-                                  suffixIcon: Icon(
-                                    isGoogleSignIn
-                                        ? Icons.edit
-                                        : Icons.verified,
-                                    color: isGoogleSignIn
-                                        ? Colors.grey
-                                        : Colors.green,
-                                  ),
+                                  suffixIcon:
+                                      Icon(Icons.edit, color: Colors.grey),
                                 ),
                                 enabled: isGoogleSignIn,
 
@@ -254,12 +248,9 @@ class _ProfilePageState extends State<ProfilePage> {
                                   ),
                                   border: OutlineInputBorder(),
                                   labelStyle: GoogleFonts.mulish(),
-                                  suffixIcon: Icon(!isGoogleSignIn
-                                      ? Icons.edit
-                                      : Icons.verified),
+                                  suffixIcon: Icon(Icons.verified),
                                 ),
-                                enabled:
-                                    !isGoogleSignIn, // Disable if Google sign-in
+                                enabled: false, // Disable if Google sign-in
                               ),
                               SizedBox(height: AppProportions.verticalSpacing),
                               GestureDetector(
