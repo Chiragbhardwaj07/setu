@@ -58,6 +58,7 @@ class OnboardingController extends GetxController {
       }
 
       // Prepare data for the API call
+      phoneController.text="+91"+phoneController.text;
       final Map<String, dynamic> requestData = {
         "phone": phoneController.text.trim(),
         "name": nameController.text.trim(),
@@ -79,13 +80,16 @@ class OnboardingController extends GetxController {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
         },
+
         body: jsonEncode(requestData),
       );
-
+      print(phoneController.text);
+      print(jsonDecode(response.body)['user']);
       // Handle the response
       if (response.statusCode == 200) {
         final jsonResponse = jsonDecode(response.body);
-
+        print(phoneController.text);
+print(jsonResponse['user']);
         var user = UserModel.fromJson(jsonResponse['user']);
 
         // Store user information locally using Hive
