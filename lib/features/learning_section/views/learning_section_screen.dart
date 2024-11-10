@@ -122,6 +122,9 @@ class _LearningSectionScreenState extends State<LearningSectionScreen>
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
+                          onTap: () {
+                            
+                          },
                           child: Container(
                             height: 200,
                             width: 160,
@@ -136,6 +139,9 @@ class _LearningSectionScreenState extends State<LearningSectionScreen>
                           ),
                         ),
                         GestureDetector(
+                          onTap: () {
+                            
+                          },
                           child: Container(
                             height: 200,
                             width: 160,
@@ -149,7 +155,38 @@ class _LearningSectionScreenState extends State<LearningSectionScreen>
                             ),
                           ),
                         ),
+                        ],
+                    ),
+
+                    SizedBox(
+                      height: 22,
+                    ),
+
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 24),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            
+                          },
+                            child: Container(
+                              height: 200,
+                              width: 160,
+                              decoration: BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                      'assets/images/learning_img2.png'),
+                                  fit: BoxFit.cover,
+                                ),
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                            ),
+                          ),
                       ],
+                        
+                      ),
                     ),
                   ],
                 ),
