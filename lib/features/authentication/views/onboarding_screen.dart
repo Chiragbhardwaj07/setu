@@ -13,7 +13,7 @@ class OnboardingScreen extends StatefulWidget {
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
   final OnboardingController controller = Get.find<OnboardingController>();
-  String? phoneNumber = Get.parameters['phone'];
+  // String? phoneNumber = Get.parameters['phone'];
   String? email = Get.parameters['email'];
   final FocusNode nameFocusNode = FocusNode();
   final FocusNode phoneFocusNode = FocusNode();
@@ -26,8 +26,6 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     if (controller.isGoogleSignIn.value) {
       controller.emailController.text = email ?? '';
-    } else {
-      controller.phoneController.text = phoneNumber ?? '';
     }
   }
 

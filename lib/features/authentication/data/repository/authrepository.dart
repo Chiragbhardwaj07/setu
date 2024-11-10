@@ -7,23 +7,23 @@ import 'package:vasu/utils/secure_storage.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 
 class AuthRepository {
-  final String loginUrl = 'https://snaket-backend-4.onrender.com/login';
+  final String loginUrl = 'https://setu-2br3.onrender.com/emaillogin';
   final String verifyOtpUrl =
-      'https://snaket-backend-4.onrender.com/verify-otp';
+      'https://setu-2br3.onrender.com/verify-otp';
   final String refreshTokenUrl =
-      'https://snaket-backend-4.onrender.com/refresh';
+      'https://setu-2br3.onrender.com/refresh';
   final String googleSignInUrl =
-      'https://snaket-backend-4.onrender.com/google-signin';
-  final String logoutUrl = 'https://snaket-backend-4.onrender.com/logout';
+      'https://setu-2br3.onrender.com/google-signin';
+  final String logoutUrl = 'https://setu-2br3.onrender.com/logout';
 
-  Future<Map<String, dynamic>> login(String phoneNumber) async {
-    var aid = await SmsAutoFill().getAppSignature;
-    print(aid);
+  Future<Map<String, dynamic>> login(String email) async {
+    // var aid = await SmsAutoFill().getAppSignature;
+    // print(aid);
     try {
       final response = await http.post(
         Uri.parse(loginUrl),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'phone': phoneNumber, 'aid': aid}),
+        body: jsonEncode({'email': email}),
       );
 
       if (response.statusCode == 200) {
@@ -44,7 +44,7 @@ class AuthRepository {
       final response = await http.post(
         Uri.parse(verifyOtpUrl),
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'phone': phone, 'otp': otp}),
+        body: jsonEncode({'email': phone, 'otp': otp}),
       );
 
       if (response.statusCode == 200) {

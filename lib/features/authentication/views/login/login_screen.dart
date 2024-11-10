@@ -15,12 +15,12 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final LoginController loginController = Get.put(LoginController());
 
-  final TextEditingController phoneController = TextEditingController();
-  final FocusNode phoneNumberFocusNode = FocusNode();
+  final TextEditingController emailController = TextEditingController();
+  final FocusNode emailFocusNode = FocusNode();
 
   @override
   void dispose() {
-    phoneNumberFocusNode.dispose();
+    emailFocusNode.dispose();
     super.dispose();
   }
 
@@ -76,20 +76,20 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextField(
                   style: Theme.of(context).primaryTextTheme.bodyLarge,
-                  controller: phoneController,
-                  focusNode: phoneNumberFocusNode,
-                  keyboardType: TextInputType.phone,
-                  inputFormatters: [
-                    LengthLimitingTextInputFormatter(10),
-                    FilteringTextInputFormatter.digitsOnly,
-                  ],
+                  controller: emailController,
+                  focusNode: emailFocusNode,
+                  keyboardType: TextInputType.emailAddress,
+                  // inputFormatters: [
+                  //   LengthLimitingTextInputFormatter(10),
+                  //   FilteringTextInputFormatter.digitsOnly,
+                  // ],
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Theme.of(context).colorScheme.surface,
                     suffixIcon: IconButton(
                       icon: Icon(Icons.clear),
                       onPressed: () {
-                        phoneController.clear();
+                        emailController.clear();
                       },
                     ),
                     focusedBorder: OutlineInputBorder(
@@ -107,15 +107,15 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 24,
                             height: 24,
                           ),
-                          SizedBox(width: 8),
-                          Text(
-                            '+91 ',
-                            style: Theme.of(context).primaryTextTheme.bodyLarge,
-                          ),
+                          // SizedBox(width: 8),
+                          // Text(
+                          //   '+91 ',
+                          //   style: Theme.of(context).primaryTextTheme.bodyLarge,
+                          // ),
                         ],
                       ),
                     ),
-                    hintText: 'XXXXXXXXXX',
+                    hintText: 'abc@gmai.com',
                     border: OutlineInputBorder(
                       borderSide: BorderSide(
                           color: Theme.of(context).colorScheme.surface),
@@ -126,15 +126,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 Obx(() {
                   return ElevatedButton(
                     onPressed: () {
-                      final phoneNumber = "+91" + phoneController.text;
-                      if (phoneController.text.isNotEmpty &&
-                          phoneController.text.length == 10) {
-                        loginController.loginUser(phoneNumber);
+                      final email = emailController.text;
+                      if (emailController.text.isNotEmpty) {
+                        loginController.loginUser(email);
                       } else {
                         // Show error if phone number is invalid
                         Get.snackbar(
-                          'Invalid Phone Number'.tr,
-                          'Please enter a valid 10-digit phone number.'.tr,
+                          'Invalid email'.tr,
+                          'Please enter a valid email.'.tr,
                           snackPosition: SnackPosition.BOTTOM,
                           backgroundColor: Colors.red,
                           colorText: Colors.white,
