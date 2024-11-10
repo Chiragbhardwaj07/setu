@@ -20,7 +20,7 @@ class _WelcomePanelState extends State<WelcomePanel> {
   @override
   void initState() {
     super.initState();
-   // loadUserName();
+    // loadUserName();
   }
 
   // Future<void> loadUserName() async {
@@ -93,16 +93,16 @@ class _WelcomePanelState extends State<WelcomePanel> {
               ),
               Positioned(
                 bottom: 20,
-                right: 20,
+                right: 18,
                 child: Container(
-                  width: 100,
-                  height: 100,
+                  width: 150,
+                  height: 200,
                   decoration: BoxDecoration(
-                    // image: DecorationImage(
-                    //   image: AssetImage(
-                    //       'assets/icons/homepage_profile.png'), // Profile image
-                    //   fit: BoxFit.cover,
-                    // ),
+                    image: DecorationImage(
+                      image: AssetImage(
+                          'assets/letters/space.png'), // Profile image
+                      fit: BoxFit.cover,
+                    ),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
