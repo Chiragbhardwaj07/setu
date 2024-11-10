@@ -11,7 +11,8 @@ class LevelTile extends StatefulWidget {
       required this.ImgPath,
       required this.level,
       required this.isLocked,
-      required this.onTap, required this.display});
+      required this.onTap,
+      required this.display});
 
   @override
   State<LevelTile> createState() => _LevelTileState();
@@ -42,7 +43,7 @@ class _LevelTileState extends State<LevelTile> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
-                widget.level,
+                widget.display,
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             ),
