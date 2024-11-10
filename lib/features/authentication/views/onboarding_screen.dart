@@ -87,83 +87,30 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                 SizedBox(height: AppProportions.verticalSpacing),
 
                 Obx(() {
-                  if (controller.isGoogleSignIn.value) {
-                    // Google Sign-In: Non-editable email, editable phone
-                    return Column(
-                      children: [
-                        TextField(
-                          controller: controller.phoneController,
-                          focusNode: phoneFocusNode,
-                          style: GoogleFonts.mulish(),
-                          keyboardType: TextInputType.phone,
-                          decoration: InputDecoration(
-                            fillColor: Theme.of(context).colorScheme.surface,
-                            filled: true,
-                            labelText: 'Phone Number'.tr,
-                            labelStyle: Theme.of(context).textTheme.bodyLarge,
-                            prefixIcon: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Icon(Icons.phone,
-                                  color: AppColors.PrimaryColor),
-                            ),
-                            border: OutlineInputBorder(),
+                  return Column(
+                    children: [
+                      TextField(
+                        controller: controller.phoneController,
+                        focusNode: phoneFocusNode,
+                        style: GoogleFonts.mulish(),
+                        keyboardType: TextInputType.phone,
+                        decoration: InputDecoration(
+                          fillColor: Theme.of(context).colorScheme.surface,
+                          filled: true,
+                          labelText: 'Phone Number'.tr,
+                          labelStyle: Theme.of(context).textTheme.bodyLarge,
+                          prefixIcon: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Icon(Icons.phone,
+                                color: AppColors.PrimaryColor),
                           ),
+                          border: OutlineInputBorder(),
                         ),
-                        SizedBox(height: AppProportions.verticalSpacing),
-                        // Non-editable email field
-                        AbsorbPointer(
-                          child: TextField(
-                            controller: controller.emailController,
-                            focusNode: emailFocusNode,
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            decoration: InputDecoration(
-                              fillColor: Theme.of(context).colorScheme.surface,
-                              filled: true,
-                              labelText: 'Email'.tr,
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(Icons.mail,
-                                    color: AppColors.PrimaryColor),
-                              ),
-                              border: OutlineInputBorder(),
-                              suffixIcon:
-                                  Icon(Icons.verified, color: Colors.green),
-                            ),
-                          ),
-                        ),
-
-                        // Editable phone number field
-                      ],
-                    );
-                  } else {
-                    // Phone Number Sign-In: Non-editable phone, editable email
-                    return Column(
-                      children: [
-                        // Non-editable phone number field
-                        AbsorbPointer(
-                          child: TextField(
-                            controller: controller.phoneController,
-                            focusNode: phoneFocusNode,
-                            style: Theme.of(context).textTheme.bodyLarge,
-                            decoration: InputDecoration(
-                              fillColor: Theme.of(context).colorScheme.surface,
-                              filled: true,
-                              labelText: 'Phone Number'.tr,
-                              prefixIcon: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Icon(Icons.phone,
-                                    color: AppColors.PrimaryColor),
-                              ),
-                              border: OutlineInputBorder(),
-                              suffixIcon: Icon(Icons.check_circle,
-                                  color: Colors.green), // Verified icon
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: AppProportions.verticalSpacing),
-
-                        // Editable email field
-                        TextField(
+                      ),
+                      SizedBox(height: AppProportions.verticalSpacing),
+                      // Non-editable email field
+                      AbsorbPointer(
+                        child: TextField(
                           controller: controller.emailController,
                           focusNode: emailFocusNode,
                           style: Theme.of(context).textTheme.bodyLarge,
@@ -177,11 +124,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                                   color: AppColors.PrimaryColor),
                             ),
                             border: OutlineInputBorder(),
+                            suffixIcon:
+                                Icon(Icons.verified, color: Colors.green),
                           ),
                         ),
-                      ],
-                    );
-                  }
+                      ),
+
+                      // Editable phone number field
+                    ],
+                  );
                 }),
 
                 SizedBox(height: AppProportions.verticalSpacing),

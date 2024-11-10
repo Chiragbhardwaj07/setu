@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 Padding(
                   padding: EdgeInsets.only(top: AppProportions.verticalSpacing),
                   child: Text(
-                    'Phone Number'.tr,
+                    'Email'.tr,
                     style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),

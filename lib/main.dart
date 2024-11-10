@@ -55,7 +55,7 @@ void main() async {
         '/bottom_navbar'; // If logged in, navigate to home  //change to bottom_navbar(anshika)
   } else {
     initialRoute =
-        '/login'; // If not logged in, go to login screen  // change to login (anshika)
+        '/bottom_navbar'; // If not logged in, go to login screen  // change to login (anshika)
   }
 
   runApp(MyApp(
