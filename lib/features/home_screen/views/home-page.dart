@@ -5,6 +5,8 @@ import 'package:vasu/features/home_screen/utils/homepage_action_button.dart';
 import 'package:vasu/features/text_to_speech/views/speechToSign.dart';
 import 'package:vasu/shared/constants/app_proportions.dart';
 
+import '../../ISL_to_text/screen.dart';
+
 class Home_page extends StatefulWidget {
   const Home_page({super.key});
 
@@ -48,12 +50,12 @@ class _Home_pageState extends State<Home_page> {
             HomepageButton(
               title: "ISL Signs".tr,
               icon: Icons.camera_alt,
-              onPressed: () {},
+              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SocketApp()));},
             ),
             HomepageButton(
               title: "Upload".tr,
               icon: Icons.image,
-              onPressed: () {},
+              onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>SocketApp()));},
             ),
           ],
         ),

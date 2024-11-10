@@ -26,7 +26,7 @@ class QuestionScreen extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 8.0),
                   child: Row(
                     children: [
-                      Image.network(option['imageUrl'], width: 50, height: 50),
+                      Image.network(option['imageUrl'], width: 120, height: 120),
                       SizedBox(width: 10),
                       Text('Option ${optionIndex + 1}'),
                     ],

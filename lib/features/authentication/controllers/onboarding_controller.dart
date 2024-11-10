@@ -17,6 +17,7 @@ class OnboardingController extends GetxController {
   final TextEditingController phoneController = TextEditingController();
   final LanguageSelectionController _languageController = Get.find();
 
+
   var isUpdating = false.obs;
   final RxBool isGoogleSignIn = false.obs;
   final storage = FlutterSecureStorage();
@@ -34,8 +35,7 @@ class OnboardingController extends GetxController {
       uid = Get.parameters['uid']; // Fetch the uid from parameters
     } else {
       isGoogleSignIn.value = false;
-      phoneController.text =
-          Get.parameters['phone'] ?? ''; // Handle phone number if passed
+      phoneController.text ="+91${Get.parameters['phone']}"?? ''; // Handle phone number if passed
     }
   }
 
@@ -58,7 +58,7 @@ class OnboardingController extends GetxController {
       }
 
       // Prepare data for the API call
-      phoneController.text="+91"+phoneController.text;
+
       final Map<String, dynamic> requestData = {
         "phone": phoneController.text.trim(),
         "name": nameController.text.trim(),
@@ -75,7 +75,7 @@ class OnboardingController extends GetxController {
 
       // Making the API request
       final response = await http.post(
-        Uri.parse('https://snaket-backend-4.onrender.com/update-info-first'),
+        Uri.parse("https://setu-2br3.onrender.com/update-info-first"),
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer $token',
