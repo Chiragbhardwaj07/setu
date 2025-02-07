@@ -127,4 +127,4 @@ Setu connects ISL users with non-ISL users by translating ISL gestures into text
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/setu.git
+   git clone https://github.com/Chiragbhardwaj07/setu.git
