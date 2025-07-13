@@ -1,6 +1,6 @@
-# Setu: Bridging Communication Between ISL and Non-ISL Users
+# Sanket: Bridging Communication Between ISL and Non-ISL Users
 
-Setu is an innovative application designed to break communication barriers by connecting individuals from the deaf and mute communities with the broader society. Through real-time translation between Indian Sign Language (ISL) and text, Setu empowers ISL speakers to interact effortlessly with family members, educators, healthcare professionals, employers, and more.
+Sanket is an innovative application designed to break communication barriers by connecting individuals from the deaf and mute communities with the broader society. Through real-time translation between Indian Sign Language (ISL) and text, Sanket empowers ISL speakers to interact effortlessly with family members, educators, healthcare professionals, employers, and more.
 
 ---
 
@@ -28,7 +28,37 @@ Setu is an innovative application designed to break communication barriers by co
 
 ## Introduction
 
-Setu connects ISL users with non-ISL users by translating ISL gestures into text and vice versa. This application significantly reduces communication barriers and fosters greater inclusion in everyday interactions. Whether for personal communication or professional engagements, Setu ensures that ISL speakers can participate fully in society.
+Sanket connects ISL users with non-ISL users by translating ISL gestures into text and vice versa. This application significantly reduces communication barriers and fosters greater inclusion in everyday interactions. Whether for personal communication or professional engagements, Sanket ensures that ISL speakers can participate fully in society.
+
+---
+## Screenshots
+<!-- Mobile: ~320px wide -->
+<p align="center">
+  <img
+    src="https://github.com/user-attachments/assets/64396724-8fb7-4a51-9814-2c30a066df58"
+    alt="Text to ISL"
+    style="width:320px; height:auto; max-width:100%;"
+  />
+  &nbsp;&nbsp;
+  <img
+    src="https://github.com/user-attachments/assets/1f01bd41-e206-4861-a527-85b6d56b83b8"
+    alt="Learning Section"
+    style="width:320px; height:auto; max-width:100%;"
+  />
+   &nbsp;&nbsp;
+  <img
+    src="https://github.com/user-attachments/assets/d7247ced-116a-49d0-b3e2-c3e9fa094e57"
+    alt="Dictionary"
+    style="width:320px; height:auto; max-width:100%;"
+  />
+   &nbsp;&nbsp;
+  <img
+    src="https://github.com/user-attachments/assets/a8f3d7bf-ff3e-4e17-bdd9-4363d5dc5183"
+    alt="Language Selection"
+    style="width:320px; height:auto; max-width:100%;"
+  />
+</p>
+
 
 ---
 
@@ -81,7 +111,7 @@ Setu connects ISL users with non-ISL users by translating ISL gestures into text
 ## Technical Methodology
 
 - **Machine Learning Integration:**  
-  Setu leverages YOLO v9 for rapid gesture detection and a CNN for classifying these gestures, ensuring swift and precise ISL-to-text translation.
+  Sanket leverages YOLO v9 for rapid gesture detection and a CNN for classifying these gestures, ensuring swift and precise ISL-to-text translation.
 - **3D Modeling and Animation:**  
   Blender is used to create high-fidelity animated models that faithfully replicate the subtleties of ISL gestures.
 - **Augmented Reality:**  
@@ -127,4 +157,4 @@ Setu connects ISL users with non-ISL users by translating ISL gestures into text
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Chiragbhardwaj07/setu.git
+   git clone https://github.com/Chiragbhardwaj07/Sanket.git
